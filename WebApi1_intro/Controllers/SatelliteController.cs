@@ -14,6 +14,13 @@ namespace WebApi1_intro.Controllers
         }
 
         [HttpGet]
+        [Route("json")]
+        public ActionResult<object> GetSimpleJson(string id)
+        {
+            return Ok(new { message = "Hello", status = "success", id });
+        }
+
+        [HttpGet]
         [Route("satdetails")]
         public ActionResult<Satellite> Details(int Id)
         {
